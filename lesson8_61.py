@@ -26,3 +26,8 @@ while(True):
     bmi, message = getBMI(height=h, weight=w)
     print(f"您的BMI是{bmi:.2f},{message}")
 
+    is_continue = pyip.inputYesNo(f"請問還要繼續嗎?(y,n)")
+    if is_continue != "yes":
+        break
+
+print("程式結束")
