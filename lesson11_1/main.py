@@ -30,9 +30,15 @@ def saveToCSV(fileName:str,date:list[list],subject_nums:int)->None:
     fields = ['姓名']
     fields.extend(subjects)
     with open (fileName,mode='w',encoding='utf-8',newline='') as file:
-       writer = csv.writer(file)
-       writer.writerow(fields)
-       writer.writerows(date)
+        try:
+            writer = csv.writer(file)
+            #fields = None
+            writer.writerow(fields)
+            writer.writerows(date)
+        except:
+            return False
+        else:
+            return True
 
 if __name__ == '__main__':   #專案執行寫法
     
@@ -41,4 +47,7 @@ if __name__ == '__main__':   #專案執行寫法
 
     students:list[list] = getStudents(students_nums=s_nums,scores_nums=o_nums)
     fileName = pyip.inputFilename("請輸入檔案名稱(不用輸入副檔名稱:)")
-    saveToCSV(fileName=fileName,date=students,subject_nums=o_nums)
+    if saveToCSV(fileName=fileName,date=students,subject_nums=o_nums):
+        print('存檔成功')
+    else:
+        print('存檔失敗')
