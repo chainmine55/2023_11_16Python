@@ -23,8 +23,10 @@ def getStudents(students_nums:int=1,scores_nums:int=2) ->list[list]:
 
     return students
 
-#students:list[list] = getStudents()
-#print(students)
+def saveToCSV(fileName:str,date:list[list])->None:
+    fileName +=".csv"
+    print("檔案名稱",fileName)
+    print(f"資料:{date}")
 
 if __name__ == '__main__':   #專案執行寫法
     
@@ -33,3 +35,4 @@ if __name__ == '__main__':   #專案執行寫法
 
     students:list[list] = getStudents(students_nums=s_nums,scores_nums=o_nums)
     print(students)
+    saveToCSV(fileName="abc",date=students)
