@@ -32,7 +32,7 @@ def saveToCSV(fileName:str,date:list[list],subject_nums:int)->None:
     with open (fileName,mode='w',encoding='utf-8',newline='') as file:
         try:
             writer = csv.writer(file)
-            #fields = None
+            #fields = None (存檔失敗用)
             writer.writerow(fields)
             writer.writerows(date)
         except:
