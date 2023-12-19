@@ -1,4 +1,5 @@
 import random
+import csv
 import pyinputplus as pyip
 
 def getStudents(students_nums:int=1,scores_nums:int=2) ->list[list]:
@@ -25,8 +26,9 @@ def getStudents(students_nums:int=1,scores_nums:int=2) ->list[list]:
 
 def saveToCSV(fileName:str,date:list[list])->None:
     fileName +=".csv"
-    print("檔案名稱",fileName)
-    print(f"資料:{date}")
+    with open (fileName,mode='w',encoding='utf-8',newline='') as file:
+       writer = csv.writer(file)
+       writer.writerows(date)
 
 if __name__ == '__main__':   #專案執行寫法
     
