@@ -34,5 +34,5 @@ if __name__ == '__main__':   #專案執行寫法
     o_nums:int = pyip.inputInt('請輸入科目數(1~7):',min=1,max=7)
 
     students:list[list] = getStudents(students_nums=s_nums,scores_nums=o_nums)
-    print(students)
-    saveToCSV(fileName="abc",date=students)
+    fileName = pyip.inputFilename("請輸入檔案名稱(不用輸入副檔名稱:)")
+    saveToCSV(fileName=fileName,date=students)
