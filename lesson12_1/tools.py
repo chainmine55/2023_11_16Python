@@ -2,8 +2,6 @@ from random import randint,choices
 import csv
 from csv import DictWriter
 
-
-
 def getStudents(nums:int) ->list[dict]:
     students:list[dict] = []
     with open('names.txt',mode='r',encoding='utf-8') as file:
